@@ -33,3 +33,42 @@ const assertArraysEqual = function(first, second) {
 
 
 // middle
+
+const middle = function(array) {
+  if (!Array.isArray(array)) {
+    return "Error: Not an array"
+  }
+
+//ONE OR TWO ELEMENTS
+  if (array.length < 2) {
+    return [];
+  }
+
+//ODD NUMBER OF ELEMENTS
+  if (array.length % 2 !== 0) {
+
+  }
+
+
+//EVEN NUMBER OF ELEMENTS
+  if (array.length % 2 == 0) {
+    
+  }
+
+
+}
+
+
+
+// Test Cases
+
+middle([1, 2, 3]) // => [2]
+middle([1, 2, 3, 4, 5]) // => [3]
+middle([1, 2, 3, 4]) // => [2, 3]
+middle([1, 2, 3, 4, 5, 6]) // => [3, 4]
+
+
+console.log(assertArraysEqual(middle([1, 2, 3]), [2]));
+console.log(assertArraysEqual(middle([1, 2, 3, 4, 5]), [3]));
+console.log(assertArraysEqual(middle([1, 2, 3, 4]), [2, 3]));
+console.log(assertArraysEqual(middle([1, 2, 3, 4, 5, 6]), [3, 4]));

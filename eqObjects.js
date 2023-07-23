@@ -1,3 +1,5 @@
+// ASSERT EQUAL FUNCTION FROM PREVIOUS EXERCISE
+
 const assertEqual = function(actual, expected) {
 
   if (actual === expected) {
@@ -7,22 +9,48 @@ const assertEqual = function(actual, expected) {
   }
 };
 
+// EQARRAYS FUNCTION FROM PREVIOUS EXERCISE
+
+function eqArrays(array1, array2) {
+  let isEqual;
+  if (array1.length !== array2.length) {
+    isEqual = false;
+    return isEqual;
+  } else if (array1.length === array2.length) {
+    for (let i = 0; i < array1.length; i++) {
+      if (array1[i] !== array2[i]) {
+        //console.log(`Arrays are not equal: Array 1, position ${i} (${array1[i]}) does not equal Array 2, position ${i} (${array1[i]})`);
+        isEqual = false;
+        //console.log(isEqual);
+      } else {
+        //console.log("Arrays are equal")
+        isEqual = true;
+      }
+
+    }
+  } return isEqual;
+}
 
 
+// START OF EQOBJECTS SOLUTION
 
-// Returns true if both objects have identical keys with identical values.
-// Otherwise you get back a big fat false!
+/*
 const eqObjects = function(object1, object2) {
   let result;
 
   if ((Object.keys(object1).length) !== (Object.keys(object2).length)) { // Guard - Check to see if objects have different number of keys 
-    let result = false;
+    result = false;
     return result;
-    //console.log(result + " Objects have different number of keys");
   }
 
-  if ((Object.keys(object1).length) === (Object.keys(object2).length)) { // Probably can refactor this out?
-    for (const key in object1) {
+  if ((Object.keys(object1).length) === (Object.keys(object2).length)) { 
+    for (const key in object1) {                                     // Loop through each key in first object
+      if (Array.isArray(object1[key])) {                            // Check to see if key in first object is an array 
+        if ((eqArrays(object1[key], object2[key])) === false) {      // If array, compare the given key values between object1 with object 2 using eqArrays function
+          console.log("Arrays are not equal");
+          result = false;
+        }
+      }
       if (object1[key] !== object2[key]) { // If at values of corresponding keys in each object don't match, false and return out of function
         result = false;
         return result;
@@ -33,7 +61,37 @@ const eqObjects = function(object1, object2) {
     return result;
   }
 }
+*/
 
+// TESTING GROUND
+
+const eqObjects = function(object1, object2) {
+  let result;
+
+  if ((Object.keys(object1).length) !== (Object.keys(object2).length)) { // Guard - Check to see if objects have different number of keys 
+    result = false;
+    return result;
+  }
+
+  for (const key in object1) {                                     // Loop through each key in first object
+    if (Array.isArray(object1[key])) {                            // Check to see if key in first object is an array 
+      if ((eqArrays(object1[key], object2[key])) === false) {      // If array, compare the given key values between object1 with object 2 using eqArrays function
+        result = false;
+        return result;
+      }
+    } else if (object1[key] !== object2[key]) { // If at values of corresponding keys in each object don't match, false and return out of function
+      result = false;
+      return result;
+    }
+  }
+  result = true;
+  return result;
+}
+
+
+
+
+// TEST CASES
 
 
 const shirtObject = { color: "red", size: "medium" };
@@ -55,3 +113,14 @@ assertEqual(eqObjects(multiColorShirtObject  , anotherMultiColorShirtObject)); /
 
 const longSleeveMultiColorShirtObject= { size: "medium", colors: ["red", "blue"], sleeveLength: "long" };
 assertEqual(eqObjects(multiColorShirtObject  , longSleeveMultiColorShirtObject)); // => false
+
+
+
+
+
+
+
+
+
+
+

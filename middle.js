@@ -23,11 +23,11 @@ function eqArrays(array1, array2) {
 // assertArraysEqual
 
 const assertArraysEqual = function(first, second) {
-
+  const inspect = require('util').inspect;                              // Added inspect solution from Implement assertObjectsEqual exercise
   if (eqArrays(first, second) === true) {
-    console.log(`✅✅✅ Assertion Passed: ${first} exactly matches ${second}`);
+    console.log(`✅✅✅ Assertion Passed: ${inspect(first)} exactly matches ${inspect(second)}`);
   } else if (eqArrays(first, second) === false) {
-    console.log("👎 👎 👎 Assertion Failed: these arrays do not match");
+    console.log(`👎 👎 👎Assertion Passed: ${inspect(first)} DOES NOT match ${inspect(second)}`);
   }
 };
 
@@ -35,40 +35,39 @@ const assertArraysEqual = function(first, second) {
 // middle
 
 const middle = function(array) {
+  result = [];  
   if (!Array.isArray(array)) {
     return "Error: Not an array"
   }
 
-//ONE OR TWO ELEMENTS
-  if (array.length < 2) {
+  if (array.length <= 2) {                      //LOGIC FOR ONE OR TWO ELEMENTS
     return [];
   }
 
-//ODD NUMBER OF ELEMENTS
-  if (array.length % 2 !== 0) {
-
+  if (array.length % 2 !== 0) {                //LOGIC FOR ODD NUMBER OF ELEMENTS
+    let x = Math.floor(array.length / 2);      // Half the array length and round down to the nearest whole number
+    result.push(array[x]);
   }
 
-
-//EVEN NUMBER OF ELEMENTS
-  if (array.length % 2 == 0) {
-    
+  if (array.length % 2 == 0) {                 // LOGIC FOR EVEN NUMBER OF ELEMENTS
+    let x = array.length / 2;
+    result.push(array[x-1]);
+    result.push(array[x]);
   }
-
-
+  return result;
 }
 
 
-
 // Test Cases
+//console.log(middle("string") + " Error"); // => Error
+//console.log(middle([1, 2]) + " should equal []"); // => []
+//console.log(middle([1, 2, 3]) + " should equal [2]"); // => [2]
+//console.log(middle([1, 2, 3, 4, 5]) + " should equal [3]"); // => [3]
+//console.log(middle([1, 2, 3, 4])+ " should equal [2, 3]"); // => [2, 3]
+//console.log(middle([1, 2, 3, 4, 5, 6]) + " should equal [3, 4]"); // => [3, 4]
 
-middle([1, 2, 3]) // => [2]
-middle([1, 2, 3, 4, 5]) // => [3]
-middle([1, 2, 3, 4]) // => [2, 3]
-middle([1, 2, 3, 4, 5, 6]) // => [3, 4]
-
-
-console.log(assertArraysEqual(middle([1, 2, 3]), [2]));
-console.log(assertArraysEqual(middle([1, 2, 3, 4, 5]), [3]));
-console.log(assertArraysEqual(middle([1, 2, 3, 4]), [2, 3]));
-console.log(assertArraysEqual(middle([1, 2, 3, 4, 5, 6]), [3, 4]));
+console.log(assertArraysEqual(middle("string"), "Error: Not an array")); // PASS - Tests handling for if the element passed to the middle function is not an array.
+console.log(assertArraysEqual(middle([1, 2, 3]), [2])); // PASS - Confirms an ODD number of array elements returns an array with a single element.
+console.log(assertArraysEqual(middle([1, 2, 3, 4, 5]), [3])); // PASS - Confirms an ODD number of array elements returns an array with a single element.
+console.log(assertArraysEqual(middle([1, 2, 3, 4]), [2, 3])); // PASS - Confirms an EVEN number of array elements returns an array with two elements.
+console.log(assertArraysEqual(middle([1, 2, 3, 4, 5, 6]), [3, 4])); // PASS - Confirms an EVEN number of array elements returns an array with two elements.

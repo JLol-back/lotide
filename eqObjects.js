@@ -68,3 +68,5 @@ assertEqual(eqObjects(shirtObject, longSleeveShirtObject), false); // PASS (corr
 assertEqual(eqObjects(multiColorShirtObject, anotherMultiColorShirtObject), true); // PASS - correctly compares the values of two objects, including handling for array values
 assertEqual(eqObjects(multiColorShirtObject, longSleeveMultiColorShirtObject), false); // PASS - correctly asserts that multiColorShirtObject and longSleeveMultiColorShirtObject are not equal
 
+console.log(eqObjects(multiColorShirtObject, anotherMultiColorShirtObject)); // => true
+console.log(eqObjects(multiColorShirtObject, longSleeveMultiColorShirtObject)); // => false

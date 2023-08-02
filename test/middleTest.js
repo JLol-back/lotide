@@ -1,9 +1,19 @@
 const middle = require('../middle');
-const assertArraysEqual = require('../assertArraysEqual');
+const assert = require('chai').assert;
 
 
-console.log(assertArraysEqual(middle("string"), "Error: Not an array")); // PASS - Tests handling for if the element passed to the middle function is not an array.
-console.log(assertArraysEqual(middle([1, 2, 3]), [2])); // PASS - Confirms an ODD number of array elements returns an array with a single element.
-console.log(assertArraysEqual(middle([1, 2, 3, 4, 5]), [3])); // PASS - Confirms an ODD number of array elements returns an array with a single element.
-console.log(assertArraysEqual(middle([1, 2, 3, 4]), [2, 3])); // PASS - Confirms an EVEN number of array elements returns an array with two elements.
-console.log(assertArraysEqual(middle([1, 2, 3, 4, 5, 6]), [3, 4])); // PASS - Confirms an EVEN number of array elements returns an array with two elements.
+describe("#middle", () => {
+  it("returns 'Error: Not an array' if provided anything other than an array", () => {
+    assert.strictEqual(middle("string"), "Error: Not an array" );
+  });
+
+  it("returns an array with a single element when provided with an array with an ODD number of elements", () => {
+    assert.deepEqual(middle([1, 2, 3]), [2] );
+  });
+
+  it("returns an array with TWO elements when provided with an array with an EVEN number of elements", () => {
+    assert.deepEqual(middle([1, 2, 3, 4]), [2, 3] );
+  });
+
+
+});  

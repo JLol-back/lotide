@@ -1,13 +1,23 @@
 const tail = require('../tail');
-const assertEqual = require('../assertEqual');
+const assert = require('chai').assert;
 
-const result = tail(["Hello", "Lighthouse", "Labs"]);
-assertEqual(result.length, 2); // ensure we get back two elements
-assertEqual(result[0], "Lighthouse"); // ensure first element is "Lighthouse"
-assertEqual(result[1], "Labs"); // ensure second element is "Labs"
+describe("#tail", () => {
+  it("returns ['Lighthouse', 'Labs'] for ['Hello', 'Lighthouse', 'Labs']", () => {
+    assert.deepEqual(tail(["Hello", "Lighthouse", "Labs"]), ["Lighthouse", "Labs"] );
+  });
 
-//Check original array is unmodified
+  it("returns an empty array '[]' when provided an array with only one element", () => {
+    assert.deepEqual(tail(["Hello"]), [] );
+  });
 
-const words = ["Yo Yo", "Lighthouse", "Labs"];
-tail(words); // no need to capture the return value since we are not checking it
-assertEqual(words.length, 3); // original array should still have 3 elements!
+  it("returns an empty array '[]' when provided an empty array '[]'", () => {
+    assert.deepEqual(tail([]), [] );
+  });
+
+  it("returns a new array and does not modify the original array that is passed in", () => {
+    const words = ["Yo Yo", "Lighthouse", "Labs"];
+    tail(words);
+    assert.deepEqual(words, ["Yo Yo", "Lighthouse", "Labs"] );
+  });
+
+});  

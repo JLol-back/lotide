@@ -1,37 +1,5 @@
-//assertArraysEqual
-
-const assertArraysEqual = function(first, second) {
-
-  if (eqArrays(first, second) === true) {
-    console.log(`✅✅✅ Assertion Passed: ${first} exactly matches ${second}`);
-  } else if (eqArrays(first, second) === false) {
-    console.log("👎 👎 👎 Assertion Failed: these arrays do not match");
-  }
-};
-
-//eqArrays
-
-function eqArrays(array1, array2) {
-  let isEqual;
-  if (array1.length !== array2.length) {
-    isEqual = false;
-    return isEqual;
-  } else if (array1.length === array2.length) {
-    for (let i = 0; i < array1.length; i++) {
-      if (array1[i] !== array2[i]) {
-        //console.log(`Arrays are not equal: Array 1, position ${i} (${array1[i]}) does not equal Array 2, position ${i} (${array1[i]})`);
-        isEqual = false;
-        //console.log(isEqual);
-      } else {
-        //console.log("Arrays are equal")
-        isEqual = true;
-      }
-
-    }
-  } return isEqual;
-}
-
-// flatten
+// flatten takes in an array that contains elements including nested array 
+// of elements and returns a flattened version of the array.
 
 flatten = function(array) {
   let flatArray = [];                                // Define a new array to contain our new flattened array
@@ -49,12 +17,4 @@ flatten = function(array) {
   return flatArray;                                  // Once loop is finished, return our newly flattened array.
 }
 
-
-console.log(flatten([1, 2, [3, 4], 5, [6]])); // => [1, 2, 3, 4, 5, 6]
-
-
-
-
-console.log(assertArraysEqual(flatten([1, 2, [3, 4], 5, [6]]), [1, 2, 3, 4, 5, 6])); // SHOULD PASS
-
-console.log(assertArraysEqual(flatten([1, 2, [3, 4], 5, [7]]), [1, 2, 3, 4, 5, 6])); // SHOULD FAIL
+module.exports = flatten;

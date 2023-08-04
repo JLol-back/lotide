@@ -1,7 +1,4 @@
 
-
-// countOnly takes in an array and an object and returns an object containing counts of every truthy value that the input object listed found in the array.
-
 const countOnly = function (allItems, itemsToCount) {
   const results = {};
 

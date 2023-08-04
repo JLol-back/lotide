@@ -1,5 +1,3 @@
-// Returns all the indices (zero-based positions) in the string where each character is found.
-
 const letterPositions = function(sentence) {
   const results = {};
   let string = sentence.toLowerCase();     // Force all letters to lowercase so they're aggregated correctly

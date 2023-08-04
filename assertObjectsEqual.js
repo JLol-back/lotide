@@ -1,7 +1,5 @@
 const eqObjects = require('./eqObjects');
 
-// assertObjectsEqual takes in 2 objects and returns true if they are equal and false otherwise.
-
 //TEST VARIABLES
 
 const obj1 = { a: '1', b: 2 };

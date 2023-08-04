@@ -1,5 +1,3 @@
-//const assertEqual = require('../assertEqual');
-
 const findKeyByValue = require('../findKeyByValue');
 const assert = require('chai').assert;
 
@@ -27,7 +25,3 @@ describe("#findKeyByValue", () => {
   });
 
 });
-
-
-
-//assertEqual(findKeyByValue(bestTVShowsByGenre, "the wire"), "drama"); // FAIL - Can't figure out how to have more flexiblity for value matching

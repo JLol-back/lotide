@@ -1,23 +1,8 @@
-// EQOBJECTS
+const eqObjects = require('./eqObjects');
 
-const eqObjects = function(object1, object2) {
-  if ((Object.keys(object1).length) !== (Object.keys(object2).length)) { // Guard - Check to see if objects have different number of keys 
-    return false;
-  }
+// assertObjectsEqual takes in 2 objects and returns true if they are equal and false otherwise.
 
-  for (const key in object1) {                                     // Loop through each key in first object
-    if (Array.isArray(object1[key])) {                            // Check to see if key in first object is an array 
-      if ((eqArrays(object1[key], object2[key])) === false) {     // If array, compare the given key values between object1 with object 2 using eqArrays function, if they don't match, return false.
-        return false;
-      }
-    } else if (object1[key] !== object2[key]) {                   // If at values of corresponding keys in each object don't match, return false.
-      return false;
-    }
-  }
-  return true;
-}
-
-// ASSERT OBJECTS EQUAL SOLUTION
+//TEST VARIABLES
 
 const obj1 = { a: '1', b: 2 };
 const obj2 = { b: 2, a: '1' };
@@ -33,6 +18,13 @@ const assertObjectsEqual = function (first, second) {
   }
 };
 
+module.exports = assertObjectsEqual;
 
-assertObjectsEqual(obj1, obj2); // PASS
-assertObjectsEqual(obj3, obj4); // FAIL
+/*
+
+//TEST CASES - Didn't convert to separate test files because the function has side-effects (they console.log instead of return) which makes them harder to test.)
+
+assertObjectsEqual(obj1, obj2); // SHOULD PASS
+assertObjectsEqual(obj3, obj4); // SHOULD FAIL
+
+*/

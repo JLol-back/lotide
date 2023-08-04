@@ -2,7 +2,7 @@
   "name": "@jwlollback/lotide",
   "version": "1.0.0",
   "description": "A mini clone of the [Lodash](https://lodash.com) library created as part of the Lighthouse Labs Web Development Bootcamp coursework",
-  "main": "assertArraysEqual.js",
+  "main": "index.js",
   "directories": {
     "test": "test"
   },

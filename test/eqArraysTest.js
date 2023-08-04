@@ -1,9 +1,17 @@
-const assertEqual = require('../assertEqual');
 const eqArrays = require('../eqArrays');
+const assert = require('chai').assert;
 
+describe("#eqArrays", () => {
+  it("returns TRUE if given two exactly equal arrays - [1, 2, 3] and [1, 2, 3]", () => {
+    assert.strictEqual(eqArrays([1, 2, 3], [1, 2, 3]), true);
+  });
 
-assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true); // => should PASS
-assertEqual(eqArrays([1, 2, 3], [1, 2]), true); // => should FAIL - Not the same number of elements in each array
-assertEqual(eqArrays([1, 2, 3], [3, 2, 1]), true); // => should FAIL
-assertEqual(eqArrays(["1", "2", "3"], ["1", "2", 3]), true); // should FAIL
-assertEqual(eqArrays(["1", "2", "3"], ["1", "2", 3]), false); // should PASS
+  it("returns FALSE if arrays provided have different lengths - [1, 2, 3] and [1, 2]", () => {
+    assert.strictEqual(eqArrays([1, 2, 3], [1, 2]), false);
+  });
+
+  it("returns FALSE if arrays provided contain similar values of different types - ['1', '2', '3'], ['1', '2', 3]", () => {
+    assert.strictEqual(eqArrays(["1", "2", "3"], ["1", "2", 3]), false);
+  });
+
+});

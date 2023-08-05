@@ -1,20 +1,20 @@
-const head = require('./head');
-const tail = require('./tail');
-const middle = require('./middle');
-const countLetters = require('./countLetters');
-const countOnly = require('./countOnly');
-const letterPositions = require('./letterPositions');
-const findKeyByValue = require('./findKeyByValue');
-const without = require('./without');
-const flatten = require('./flatten');
-const map = require('./map');
-const takeUntil = require('./takeUntil');
-const findKey = require('./findKey');
-const eqObjects = require('./eqObjects');
-const eqArrays = require('./eqArrays');
-const assertEqual = require('./assertEqual');
-const assertArraysEqual = require('./assertArraysEqual');
-const assertObjectsEqual = require('./assertObjectsEqual');
+const head = require("./head");
+const tail = require("./tail");
+const middle = require("./middle");
+const countLetters = require("./countLetters");
+const countOnly = require("./countOnly");
+const letterPositions = require("./letterPositions");
+const findKeyByValue = require("./findKeyByValue");
+const without = require("./without");
+const flatten = require("./flatten");
+const map = require("./map");
+const takeUntil = require("./takeUntil");
+const findKey = require("./findKey");
+const eqObjects = require("./eqObjects");
+const eqArrays = require("./eqArrays");
+const assertEqual = require("./assertEqual");
+const assertArraysEqual = require("./assertArraysEqual");
+const assertObjectsEqual = require("./assertObjectsEqual");
 
 module.exports = {
   head,
@@ -33,5 +33,5 @@ module.exports = {
   eqArrays,
   assertEqual,
   assertArraysEqual,
-  assertObjectsEqual
+  assertObjectsEqual,
 };

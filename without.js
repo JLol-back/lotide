@@ -1,8 +1,8 @@
 /**
- * 
- * @param {array} source 
- * @param {array} itemsToRemove 
- * @returns 
+ *
+ * @param {array} source
+ * @param {array} itemsToRemove
+ * @returns
  */
 const without = function(source, itemsToRemove) {
 
@@ -12,7 +12,7 @@ const without = function(source, itemsToRemove) {
     if (itemsToRemove.includes(result[i])) {
       result.splice(i, 1);
       i--;          // If item removed from results array, decrement 'i' to account for the newly shortened results array length so our for loop doesn't end before iterating over every value.
-    }   
+    }
   }
   return result;
 };

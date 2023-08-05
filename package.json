@@ -1,6 +1,6 @@
 {
   "name": "@jwlollback/lotide",
-  "version": "1.0.2",
+  "version": "1.0.1",
   "description": "A mini clone of the [Lodash](https://lodash.com) library created as part of the Lighthouse Labs Web Development Bootcamp coursework",
   "main": "index.js",
   "directories": {

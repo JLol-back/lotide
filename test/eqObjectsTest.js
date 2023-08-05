@@ -24,5 +24,8 @@ describe("#eqObjects", () => {
     assert.strictEqual(eqObjects(multiColorShirtObject, anotherMultiColorShirtObject), true);
   });
   
+  it("returns FALSE when comparing - '{a:[1,2], b:2}' and '{a:[2,2], b:2}}'", () => {
+    assert.strictEqual(eqObjects({a:[1,2], b:2}, {a:[2,2], b:2}), false);
+  });
  
 });

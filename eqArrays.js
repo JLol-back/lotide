@@ -2,7 +2,7 @@
  * eqArraystakes compares the values of 2 arrays to determine if they are equal.
  * @param {array} array1
  * @param {array} array2
- * @returns boolean - true if the arrays are equal and false otherwise.
+ * @returns boolean - TRUE if the arrays are equal and FALSE otherwise.
  */
 const eqArrays = function(array1, array2) {
   if (array1.length !== array2.length) {

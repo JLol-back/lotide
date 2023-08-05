@@ -1,6 +1,6 @@
 /**
  * head takes in an array and returns the first element found within that array.
- * @param {*} array
+ * @param {array} array
  * @returns the first element itself, i.e. not as an array. An empty array will return undefined.
  */
 

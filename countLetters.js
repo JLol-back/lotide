@@ -1,6 +1,6 @@
 /**
  * countLetters takes in a string and returns a count of each of the letters present in the string.
- * @param {*} string
+ * @param {string} string
  * @returns an object containing one key for each unique letter found in the string with a value equal to how many times the letter was present within the string.
  */
 

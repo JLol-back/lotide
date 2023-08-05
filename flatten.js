@@ -1,6 +1,6 @@
 /**
  * flatten takes in a array that contains elements including nested/multi-dimensional arrays of elements and returns a flattened version of the array.
- * @param {*} array - Multi-dimensional array
+ * @param {array} array - Multi-dimensional array
  * @returns {array} a one dimensional array containing all the values found in the nested array.
  */
 

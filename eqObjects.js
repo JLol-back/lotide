@@ -3,8 +3,8 @@ const eqArrays = require("./eqArrays");
 /**
  * eqObjects takes in 2 objects and uses the strict equality operator (===) to evaluate whether objects have identical keys with identical values.
  * @function {eqArrays} is called to compare array elements found within objects.
- * @param {*} object1
- * @param {*} object2
+ * @param {object} object1
+ * @param {object} object2
  * @returns returns TRUE if objects are found to be equal and FALSE otherwise.
  */
 

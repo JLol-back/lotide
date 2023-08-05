@@ -14,4 +14,8 @@ describe("#eqArrays", () => {
     assert.strictEqual(eqArrays(["1", "2", "3"], ["1", "2", 3]), false);
   });
 
+  it("returns FALSE when comparing '[1,2,3]' and '[1,3,3]'", () => {
+    assert.strictEqual(eqArrays([1,2,3], [1,3,3]), false);
+  });
+
 });

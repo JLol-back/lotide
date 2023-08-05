@@ -1,18 +1,34 @@
-const eqObjects = require('./eqObjects');
+/**
+ * assertObjectsEqual compares two objects using eqObjects and prints an appropriate message after based on whether they match or not.
+ * @function {eqObjects}
+ * @param {object} first
+ * @param {object} second
+ * @returns prints to the console a message of '✅✅✅ Assertion Passed' if eqObjects evaluates to TRUE and '👎 👎 👎 Assertion Failed' if eqObjects evaluates to FALSE.
+ */
 
-//TEST VARIABLES
+const eqObjects = require("./eqObjects");
 
-const obj1 = { a: '1', b: 2 };
-const obj2 = { b: 2, a: '1' };
-const obj3 = { a: '1', b: 2 };
-const obj4 = { b: 3, a: '1' };
 
-const assertObjectsEqual = function (first, second) {
-  const inspect = require('util').inspect;
+/*
+TEST VARIABLES
+
+const obj1 = { a: "1", b: 2 };
+const obj2 = { b: 2, a: "1" };
+const obj3 = { a: "1", b: 2 };
+const obj4 = { b: 3, a: "1" };
+
+*/
+
+const assertObjectsEqual = function(first, second) {
+  const inspect = require("util").inspect;
   if (eqObjects(first, second)) {
-    console.log(`✅✅✅ Assertion Passed: ${inspect(first)} === ${inspect(second)}`);
+    console.log(
+      `✅✅✅ Assertion Passed: ${inspect(first)} === ${inspect(second)}`
+    );
   } else if (!eqObjects(first, second)) {
-    console.log(`👎 👎 👎 Assertion Failed: ${inspect(first)} !== ${inspect(second)}`);
+    console.log(
+      `👎 👎 👎 Assertion Failed: ${inspect(first)} !== ${inspect(second)}`
+    );
   }
 };
 

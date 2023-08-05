@@ -1,18 +1,20 @@
-
+/**
+ * 
+ * @param {*} array1 
+ * @param {*} array2 
+ * @returns 
+ */
 function eqArrays(array1, array2) {
-  let isEqual;
   if (array1.length !== array2.length) {
-    isEqual = false;
-    return isEqual;
+    return false;
   } else if (array1.length === array2.length) {
     for (let i = 0; i < array1.length; i++) {
       if (array1[i] !== array2[i]) {
-        isEqual = false;
-      } else {
-        isEqual = true;
+        return false;
       }
     }
-  } return isEqual;
+  }
+  return true;
 }
 
 module.exports = eqArrays;
